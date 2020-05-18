@@ -27,17 +27,26 @@ public class PuyoPuyoController : MonoBehaviour {
 
     // TODO:連打時に実行されるよう修正する
     if (Input.GetMouseButtonDown(0)) {
-      cnt++;
-      // おこたん大爆発！！
-      if (cnt > 5) {
-        ChageFace("angry");
-        // おこたん終了
-        StartCoroutine(DelayMethod(10.0f, () => {
-          ChageFace("smile");
-          cnt = 0;
-        }));
+
+      Vector3 pos = Input.mousePosition;
+      Ray ray = ARcamera.ScreenPointToRay(pos);
+      RaycastHit hit;
+      if (Physics.Raycast(ray, out hit, 100f)) {
+        if (hit.collider.gameObject == this.gameObject) {
+          cnt++;
+        }
       }
     }
+
+    // おこたん大爆発！！
+    if (cnt > 5) {
+      ChageFace("angry");
+      StartCoroutine(DelayMethod(10.0f, () => {
+        ChageFace("smile");
+        cnt = 0;
+      }));
+    }
+
   }
 
   // angry:おこたん（赤）
