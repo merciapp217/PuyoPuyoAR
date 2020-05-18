@@ -32,7 +32,7 @@ public class PuyoPuyoController : MonoBehaviour {
       if (cnt > 5) {
         ChageFace("angry");
         // おこたん終了
-        StartCoroutine(DelayMethod(5.5f, () => {
+        StartCoroutine(DelayMethod(10.0f, () => {
           ChageFace("smile");
           cnt = 0;
         }));
