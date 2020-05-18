@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3587624811334826196}
-  - component: {fileID: 4907020534512256335}
   - component: {fileID: 4290399653566468918}
   - component: {fileID: 545661348238559942}
+  - component: {fileID: 2496527626264241115}
   m_Layer: 0
   m_Name: PuyoPuyo
   m_TagString: Untagged
@@ -35,26 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!111 &4907020534512256335
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545661348238559943}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: -2832804165000907492, guid: 59c5698d209a3413997cdb59ef3b8053,
-    type: 3}
-  m_Animations:
-  - {fileID: -2832804165000907492, guid: 59c5698d209a3413997cdb59ef3b8053, type: 3}
-  - {fileID: -5855697660917834125, guid: 59c5698d209a3413997cdb59ef3b8053, type: 3}
-  - {fileID: 336922614223738516, guid: 59c5698d209a3413997cdb59ef3b8053, type: 3}
-  - {fileID: 237992943493692193, guid: 59c5698d209a3413997cdb59ef3b8053, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!135 &4290399653566468918
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -86,6 +66,25 @@ MonoBehaviour:
   cry_Texture: {fileID: 2800000, guid: d2f1649a8fdf942fa8168a9c4d3d9849, type: 3}
   angry_Texture: {fileID: 2800000, guid: acc67bdbb00f546cfba1c818dabbf0a5, type: 3}
   smile_Texture: {fileID: 2800000, guid: 403309f61cd0f4e78b021338b4670841, type: 3}
+--- !u!95 &2496527626264241115
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545661348238559943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2bff23d9049e54028a47679aacc2e200, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &776669705838701250
 GameObject:
   m_ObjectHideFlags: 0

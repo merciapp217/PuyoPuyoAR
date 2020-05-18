@@ -7,9 +7,11 @@ public class PuyoPuyoController : MonoBehaviour {
   
   public Material[] _material;
   public Texture cry_Texture, angry_Texture, smile_Texture;
-  
-
+  //Animation puyoAnim;
+  bool LookAtMe = true;
   int cnt = 0;
+  Animator animator;
+
   //float waitTime = 0;
   //string face = "smile";
   Camera ARcamera;
@@ -19,11 +21,14 @@ public class PuyoPuyoController : MonoBehaviour {
     transform.rotation = new Quaternion(0, 90, 0, 0);
     m_Renderer = transform.Find("Sphere").GetComponent<Renderer>();
     ARcamera = GameObject.FindGameObjectWithTag("ARCamera").GetComponent<Camera>();
+    animator = GetComponent<Animator>();
   }
 
   void Update() {
     // あたいを見てっ！！
-    this.transform.LookAt(ARcamera.transform);
+    if (LookAtMe) {
+      this.transform.LookAt(ARcamera.transform);
+    }
 
     // TODO:連打時に実行されるよう修正する
     if (Input.GetMouseButtonDown(0)) {
@@ -37,6 +42,11 @@ public class PuyoPuyoController : MonoBehaviour {
         }
       }
     }
+
+    StartCoroutine(DelayMethod(UnityEngine.Random.Range(1.0f, 10.0f), () => {
+      int num = UnityEngine.Random.Range(0, 3);
+      animator.SetInteger("animNum", num);
+    }));
 
     // おこたん大爆発！！
     if (cnt > 5) {
